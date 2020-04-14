@@ -13,6 +13,8 @@ import TodoListModel from "./models/TodoListModel";
 import TodoModel from "./models/TodoModel";
 import ComputerBuildModel from "./models/ComputerBuildModel";
 
+import css from './css/style.css'
+
 //creating instances of the models to use as stores for everything
 const toDoStore = new TodoListModel();
 const computerPartsStore = new ComputerBuildModel();
@@ -22,8 +24,10 @@ render(
   <div>
     <DevTools />
     <TodoList toDoStore={toDoStore} />
-    <ComputerPartSelect computerPartsStore={computerPartsStore} />
-    <ComputerCheckout computerPartsStore={computerPartsStore} />
+    <div className="computerParts">
+	    <ComputerPartSelect computerPartsStore={computerPartsStore} />
+	    <ComputerCheckout computerPartsStore={computerPartsStore} />
+    </div>
   </div>,
   document.getElementById("root")
 );

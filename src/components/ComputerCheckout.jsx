@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
 //I don't need to create observables or actions
 // import { observable, action } from "mobx";
+
 //Observer decorator makes the class update when mobx observable values change
 import { observer } from "mobx-react";
 
@@ -12,9 +14,14 @@ class ComputerCheckout extends React.Component {
         return (
             <div>
                 COMPUTER CHECKOUT
-                {Object.values(this.props.computerPartsStore.computerBuild).map(v => 
-                <div key={v.name}>
-                {v.name}<div></div>{v.cost}
+                {Object.values(this.props.computerPartsStore.computerBuild).map(selectedItem => 
+                <div key={selectedItem.name}>
+                  <p>
+                    {selectedItem.name}
+                    <br/>
+                    {selectedItem.cost}
+                  </p>
+                  <button onClick={() => this.props.computerPartsStore.removeComputerPart(selectedItem)}>X</button>
                 </div>)}
                 <div>SUM:
                 {this.props.computerPartsStore.computerBuildCost}

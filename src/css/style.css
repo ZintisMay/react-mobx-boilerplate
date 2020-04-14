@@ -1,0 +1,20 @@
+*{
+	outline:1px dotted gray;
+}
+.computerParts{
+	max-height: 70vh;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.computerParts>div{
+	height:70vh;
+	display: inline-block;
+	width:50%;
+}
+@media(max-width:600px){
+	.computerParts>div{
+		width:100%;
+	}
+}

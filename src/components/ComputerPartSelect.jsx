@@ -31,7 +31,14 @@ class ComputerPartSelect extends React.Component {
                         category.map( item => 
                             <div key={item.name} onClick={
                                 () => this.props.computerPartsStore.selectComputerPart(item)}>
-                                {item.name}{item.cost}{item.type}
+                                <p style={{color: item.selected ? 'red' : 'black'}}>
+                                    {item.name}
+                                    <br/>
+                                    {item.cost}
+                                    <br/>
+                                    {item.type}
+                                </p>
+                                
                             </div>
                         )
                     )
